@@ -1,6 +1,19 @@
-uses: actions/jekyll-build-pages@v1
-- name: Build Jekyll site
-  uses: actions/jekyll-build-pages@v1
-  with:
-    source: .  # <- Set this to the current directory if you're not using /docs
-    destination: ./_site
+name: Build and Deploy Jekyll Site
+
+on:
+  push:
+    branches: [main]  # Or your default branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build Jekyll site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: .
+          destination: ./_site
