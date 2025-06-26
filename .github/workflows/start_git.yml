@@ -1,1 +1,6 @@
-source:
+uses: actions/jekyll-build-pages@v1
+- name: Build Jekyll site
+  uses: actions/jekyll-build-pages@v1
+  with:
+    source: .  # <- Set this to the current directory if you're not using /docs
+    destination: ./_site
