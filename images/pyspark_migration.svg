@@ -1,0 +1,44 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PySpark Migration with verified equivalence">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1428"/>
+      <stop offset="100%" stop-color="#0f1a35"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#152040" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+
+  <text x="600" y="135" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="60" fill="#ffffff" letter-spacing="-1">PySpark Migration</text>
+  <text x="600" y="180" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="400" font-size="26" fill="#a4b5d4">with verified equivalence</text>
+
+  <g transform="translate(150, 240)">
+    <rect width="900" height="380" rx="14" fill="#0d1933" stroke="#2a3a66" stroke-width="1.5"/>
+
+    <circle cx="32" cy="32" r="9" fill="#ff5f56"/>
+    <circle cx="60" cy="32" r="9" fill="#ffbd2e"/>
+    <circle cx="88" cy="32" r="9" fill="#27c93f"/>
+    <text x="868" y="38" text-anchor="end" font-family="Menlo, Monaco, monospace" font-size="14" fill="#5a6a8c">notebook.ipynb</text>
+
+    <line x1="20" y1="66" x2="880" y2="66" stroke="#1a2a4f" stroke-width="1"/>
+
+    <text x="44" y="118" font-family="Menlo, Monaco, monospace" font-size="20" fill="#5e7090"># Step 3 -- prove the migration is correct</text>
+
+    <text x="44" y="162" font-family="Menlo, Monaco, monospace" font-size="22" fill="#c9d6f0">sql_rows = {r.pickup_hour: r.avg_fare_per_mile</text>
+    <text x="124" y="190" font-family="Menlo, Monaco, monospace" font-size="22" fill="#c9d6f0">for r in sql_result.collect()}</text>
+
+    <text x="44" y="232" font-family="Menlo, Monaco, monospace" font-size="22" fill="#c9d6f0">psk_rows = {r.pickup_hour: r.avg_fare_per_mile</text>
+    <text x="124" y="260" font-family="Menlo, Monaco, monospace" font-size="22" fill="#c9d6f0">for r in pyspark_result.collect()}</text>
+
+    <text x="44" y="304" font-family="Menlo, Monaco, monospace" font-size="22" fill="#ffd54f" font-weight="700">assert sql_rows == psk_rows</text>
+
+    <text x="44" y="348" font-family="Menlo, Monaco, monospace" font-size="20" fill="#7fd49a">&gt; Migration verified: 24 hours, both engines agree</text>
+  </g>
+
+  <text x="600" y="690" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="22" fill="#a4b5d4" letter-spacing="2">PYSPARK &#x2022; SPARK SQL &#x2022; DATABRICKS &#x2022; NYC TLC</text>
+
+  <text x="600" y="740" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-style="italic" font-size="18" fill="#5e7090">every migration ships with a test that fails if outputs diverge</text>
+</svg>
